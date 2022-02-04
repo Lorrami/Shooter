@@ -4,8 +4,9 @@ project(Shooter)
 set(CMAKE_CXX_STANDARD 17)
 
 set(SHOOTER_SOURCES
-    main.cpp
-)
+ "main.cpp"
+ "Application.cpp" 
+ "Level.cpp" "GameObject.cpp" "Player.cpp")
 
 add_subdirectory(thirdparty/SFML)
 
