@@ -7,4 +7,7 @@ set(SHOOTER_SOURCES
     main.cpp
 )
 
+add_subdirectory(thirdparty/SFML)
+
 add_executable(Shooter ${SHOOTER_SOURCES})
+target_link_libraries(Shooter sfml-graphics sfml-system sfml-window)
