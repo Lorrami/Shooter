@@ -2,14 +2,17 @@
 #include "Level.hpp"
 #include "GameObject.hpp"
 
-void Level::Update()
+Level::Level()
 {
 	m_Objects.push_back(new Player(60.0f));
 }
+void Level::Update()
+{
+}
 void Level::Draw(sf::RenderWindow *window)
 {
-	for(GameObject *var: m_Objects)
+	for(GameObject *Object: m_Objects)
 	{
-		window->draw(*var);
+		window->draw(*Object);
 	}
 }

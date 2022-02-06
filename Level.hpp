@@ -9,6 +9,7 @@ class Level
 private:
 	std::vector<GameObject*> m_Objects;
 public:
+	Level();
 	void Update();
 	void Draw(sf::RenderWindow *window);
 };

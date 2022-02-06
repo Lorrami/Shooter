@@ -8,4 +8,5 @@ Player::Player(float m_Size)
 }
 void Player::Update()
 {
+	
 }
