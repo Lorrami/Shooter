@@ -7,8 +7,10 @@
 class Level
 {
 private:
+	sf::Clock clock;
 	std::vector<GameObject*> m_Objects;
 public:
+	float dt;
 	Level();
 	void Update();
 	void Draw(sf::RenderWindow *window);
