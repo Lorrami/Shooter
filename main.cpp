@@ -3,6 +3,6 @@
 #include "Application.hpp"
 
 int main() {
-    Application().Run();
+    Application::Get().Run();
     return 777;
 }

@@ -1,4 +1,8 @@
+#pragma once
+
 #include "Application.hpp"
+
+Application Application::s_Instance;
 
 void Application::Run()
 {
@@ -11,5 +15,15 @@ void Application::Run()
 
 		m_Window.display();
 	}
+}
+
+sf::Vector2i Application::MousePosition()
+{
+	return sf::Mouse::getPosition(m_Window);
+}
+
+Application& Application::Get()
+{
+	return s_Instance;
 }
 
