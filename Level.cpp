@@ -8,16 +8,15 @@ Level::Level()
 {
 	m_Objects.push_back(new Player(60.0f));
 }
-void Level::Update()
+void Level::Update(float dt)
 {
-	dt = clock.getElapsedTime().asSeconds();
-	clock.restart();
+    for(GameObject *Object: m_Objects)
+        Object->Update(dt);
 }
 void Level::Draw(sf::RenderWindow *window)
 {
 	for(GameObject *Object: m_Objects)
 	{
-		Object->Update(dt);
 		window->draw(*Object);
 	}
 }
