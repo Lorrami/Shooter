@@ -10,7 +10,7 @@ private:
 	sf::Clock clock;
 	std::vector<GameObject*> m_Objects;
 public:
-	float dt;
+	float dt = 0;
 	Level();
 	void Update();
 	void Draw(sf::RenderWindow *window);
