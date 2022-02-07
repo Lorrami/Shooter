@@ -2,7 +2,6 @@
 
 #include "Player.hpp"
 #include "Application.hpp"
-#include <iostream>
 
 void Player::KeyboardUpdate(float dt)
 {
@@ -28,7 +27,6 @@ void Player::RotationUpdate()
 	float dx = -Application::Get().MousePosition().x + getPosition().x;
 	float dy = -Application::Get().MousePosition().y + getPosition().y;
 	float rotation = (atan2(dy, dx)) * 180.0f / 3.14159265f;
-	std::cout << rotation << std::endl;
 	setRotation(rotation);
 }
 void Player::Movement(float dx, float dy)
