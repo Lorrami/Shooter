@@ -7,7 +7,7 @@ class Application
 {
 	static Application s_Instance;
 private:
-	sf::RenderWindow m_Window{ sf::VideoMode(700, 700), "Test"};
+	sf::RenderWindow m_Window{ sf::VideoMode(700, 700), "Shooter"};
 	Level m_Level;
     sf::Clock m_GameClock;
 private:

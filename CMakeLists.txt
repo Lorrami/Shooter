@@ -8,7 +8,8 @@ set(SHOOTER_SOURCES
  "Application.cpp" 
  "Level.cpp"
  "GameObject.cpp"
- "Player.cpp")
+ "Player.cpp"
+ "Bullet.cpp")
 
 add_subdirectory(thirdparty/SFML)
 

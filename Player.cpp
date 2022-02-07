@@ -2,6 +2,7 @@
 
 #include "Player.hpp"
 #include "Application.hpp"
+#include "Bullet.hpp"
 
 void Player::KeyboardUpdate(float dt)
 {
@@ -33,7 +34,13 @@ void Player::Movement(float dx, float dy)
 {
 	setPosition(getPosition() + sf::Vector2f(dx, dy));
 }
-
+void Player::Shooting()
+{
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+	{
+		Level::Get().Add(new Bullet(getPosition()));
+	}
+}
 Player::Player(float m_Size)
 {
 	setSize(sf::Vector2f(m_Size, m_Size));

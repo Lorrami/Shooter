@@ -6,11 +6,11 @@ Application Application::s_Instance;
 
 void Application::Run()
 {
-    float dt = m_GameClock.getElapsedTime().asSeconds();
-    m_GameClock.restart();
-
 	while (m_Window.isOpen())
 	{
+		float dt = m_GameClock.getElapsedTime().asSeconds();
+		m_GameClock.restart();
+		
 		m_Window.clear();
 
 		m_Level.Update(dt);

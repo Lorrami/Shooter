@@ -4,9 +4,15 @@
 #include "Level.hpp"
 #include "GameObject.hpp"
 
+Level Level::l_Instance;
+
 Level::Level()
 {
 	m_Objects.push_back(new Player(60.0f));
+}
+void Level::Add(GameObject* Object)
+{
+	m_Objects.push_back(Object);
 }
 void Level::Update(float dt)
 {
@@ -19,4 +25,8 @@ void Level::Draw(sf::RenderWindow *window)
 	{
 		window->draw(*Object);
 	}
+}
+Level& Level::Get()
+{
+	return l_Instance;
 }

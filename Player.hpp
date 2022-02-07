@@ -9,6 +9,7 @@ private:
 	void KeyboardUpdate(float dt);
 	void RotationUpdate();
 	void Movement(float dx, float dy);
+	void Shooting();
 public:
 	Player(float m_Size);
 	void Update(float dt) override;
