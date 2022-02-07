@@ -6,14 +6,14 @@
 
 class Level
 {
-	static Level l_Instance;
-public:
+private:
 	std::vector<GameObject*> m_Objects;
+	std::vector<GameObject*> m_PendingAddObjects;
+	std::vector<GameObject*> m_PendingRemoveObjects;
 public:
 	Level();
 	void Add(GameObject* Object);
+	void Remove(GameObject* Object);
 	void Update(float dt);
 	void Draw(sf::RenderWindow *window);
-
-	static Level& Get();
 };

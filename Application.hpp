@@ -15,6 +15,7 @@ private:
 public:
 	void Run();
 	sf::Vector2i MousePosition();
+	Level& CurLevel();
 
 	static Application &Get();
 };

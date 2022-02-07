@@ -38,7 +38,9 @@ void Player::Shooting()
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
 	{
-		Level::Get().Add(new Bullet(getPosition()));
+		float dx = Application::Get().MousePosition().x - getPosition().x;
+		float dy = Application::Get().MousePosition().y - getPosition().y;
+		Application::Get().CurLevel().Add(new Bullet(getPosition(), sf::Vector2f(dx, dy)));
 	}
 }
 Player::Player(float m_Size)
@@ -52,4 +54,5 @@ void Player::Update(float dt)
 {
 	KeyboardUpdate(dt);
 	RotationUpdate();
+	Shooting();
 }

@@ -24,6 +24,10 @@ sf::Vector2i Application::MousePosition()
 {
 	return sf::Mouse::getPosition(m_Window);
 }
+Level& Application::CurLevel()
+{
+	return m_Level;
+}
 
 Application& Application::Get()
 {
