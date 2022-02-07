@@ -4,26 +4,26 @@
 #include "Application.hpp"
 #include <iostream>
 
-void Player::m_KeyboardUpdate(float dt)
+void Player::KeyboardUpdate(float dt)
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 	{
-		m_Movement(m_Speed * dt, 0);
+		Movement(m_Speed * dt, 0);
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 	{
-		m_Movement(-m_Speed * dt, 0);
+		Movement(-m_Speed * dt, 0);
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
 	{
-		m_Movement(0, m_Speed * dt);
+		Movement(0, m_Speed * dt);
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 	{
-		m_Movement(0, -m_Speed * dt);
+		Movement(0, -m_Speed * dt);
 	}
 }
-void Player::m_RotationUpdate()
+void Player::RotationUpdate()
 {
 	float dx = -Application::Get().MousePosition().x + getPosition().x;
 	float dy = -Application::Get().MousePosition().y + getPosition().y;
@@ -31,7 +31,7 @@ void Player::m_RotationUpdate()
 	std::cout << rotation << std::endl;
 	setRotation(rotation);
 }
-void Player::m_Movement(float dx, float dy)
+void Player::Movement(float dx, float dy)
 {
 	setPosition(getPosition() + sf::Vector2f(dx, dy));
 }
@@ -45,6 +45,6 @@ Player::Player(float m_Size)
 }
 void Player::Update(float dt)
 {
-	m_KeyboardUpdate(dt);
-	m_RotationUpdate();
+	KeyboardUpdate(dt);
+	RotationUpdate();
 }
