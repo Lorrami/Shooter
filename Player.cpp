@@ -36,7 +36,7 @@ void Player::Movement(float dx, float dy)
 }
 void Player::Shooting()
 {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
 	{
 		float dx = Application::Get().MousePosition().x - getPosition().x;
 		float dy = Application::Get().MousePosition().y - getPosition().y;
