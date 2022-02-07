@@ -9,6 +9,7 @@ class Application
 private:
 	sf::RenderWindow m_Window{ sf::VideoMode(700, 700), "Test"};
 	Level m_Level;
+    sf::Clock m_GameClock;
 private:
 	Application() = default;
 public:
