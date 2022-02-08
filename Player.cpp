@@ -40,7 +40,7 @@ void Player::Shooting()
 	{
 		float dx = Application::Get().MousePosition().x - getPosition().x;
 		float dy = Application::Get().MousePosition().y - getPosition().y;
-		Application::Get().CurLevel().Add(new Bullet(getPosition(), sf::Vector2f(dx, dy)));
+		Application::Get().CurLevel().Add(Bullet(getPosition(), sf::Vector2f(dx, dy)));
 	}
 }
 Player::Player(float m_Size)
