@@ -1,5 +1,4 @@
-#pragma once
-
+#include <cmath>
 #include "Bullet.hpp"
 #include "Application.hpp"
 #include <iostream>

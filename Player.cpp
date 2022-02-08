@@ -1,5 +1,4 @@
-#pragma once
-
+#include <cmath>
 #include "Player.hpp"
 #include "Application.hpp"
 #include "Bullet.hpp"
