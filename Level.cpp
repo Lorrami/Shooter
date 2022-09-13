@@ -23,17 +23,15 @@ void Level::Update(float dt)
 	m_Objects.insert(m_Objects.end(), m_PendingAddObjects.begin(), m_PendingAddObjects.end());
 	m_PendingAddObjects.clear();
 
-	for (GameObject* Object : m_PendingRemoveObjects)
+	for (GameObject* ObjectToRemove : m_PendingRemoveObjects)
 	{ 
 		for (int i = 0; i < m_Objects.size(); i++)
 		{
-			if (Object == m_Objects[i])
+			if (ObjectToRemove == m_Objects[i])
 			{
-				GameObject* TimeParam = m_Objects[i];
-				m_Objects[i] = m_Objects[m_Objects.size() - 1];
-				m_Objects[m_Objects.size() - 1] = TimeParam;
+				delete m_Objects[i];
+				std::swap(m_Objects[i], m_Objects.back());
 				m_Objects.pop_back();
-				delete TimeParam;
 			}
 		}
 	}
