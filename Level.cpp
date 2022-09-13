@@ -17,8 +17,8 @@ void Level::Remove(GameObject* Object)
 }
 void Level::Update(float dt)
 {
-    for(GameObject *Object: m_Objects)
-        Object->Update(dt);
+    	for(GameObject *Object: m_Objects)
+        	Object->Update(dt);
 
 	m_Objects.insert(m_Objects.end(), m_PendingAddObjects.begin(), m_PendingAddObjects.end());
 	m_PendingAddObjects.clear();
@@ -33,6 +33,7 @@ void Level::Update(float dt)
 				m_Objects[i] = m_Objects[m_Objects.size() - 1];
 				m_Objects[m_Objects.size() - 1] = TimeParam;
 				m_Objects.pop_back();
+				delete TimeParam;
 			}
 		}
 	}
